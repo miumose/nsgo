@@ -65,9 +65,7 @@ const zhPath = page ? localePath('zh', path) : null;
     <meta name="twitter:image:alt" content={copy.home.title} />
     <link rel="describedby" type="text/plain" href={`${base}llms.txt`} />
     <slot name="head" />
-    <!-- Umami counts the deployed site's visits, tagged "website" beside the
-         gallery's "gallery-web" and "gallery-app"; data-domains skips local
-         servers. -->
+    <!-- Umami counts the deployed site's visits; data-domains skips local servers. -->
     <script
       is:inline
       defer

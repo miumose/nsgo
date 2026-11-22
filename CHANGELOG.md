@@ -280,6 +280,7 @@
 - Pass `RequestAnimationFrame` callbacks the display's frame time on macOS, iOS, Android, the web, Linux, Windows, HarmonyOS and watchOS rather than when the engine got to the frame (on HarmonyOS only from a host built with the OpenHarmony SDK, as the committed host still gives the engine's clock until it is rebuilt), and tick Linux's animations from the display's `GdkFrameClock` rather than a 16 ms timer (#1048 by @houko).
 - Let a `List`'s row whose views have a closed tooltip go once it scrolls away, instead of holding it as a row with an open overlay is held, which kept every such row mounted, and in memory, for as long as the list stayed (#1149 by @iFwu).
 - Keep a keyed `List` row in its cell, with its measured size and, as the first visible row, its place on screen, when one update changes rows on both sides of it, instead of handing its cell to another row and building it again, which dropped what it held, such as a field's focus and its input method's composition (#1146 by @iFwu).
+- Remove usage statistics from the Gallery app and its web pages.
 
 ## [0.2.0] - 2026-11-19
 

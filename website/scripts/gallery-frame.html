@@ -507,15 +507,6 @@
         document.documentElement.style.colorScheme = theme;
       })();
     </script>
-    <!-- The page's arrival is the event load-gallery in the site's Umami, tagged "gallery-web", once a visit; the app in the frame does not count it again (gallery-loader.html), and each platform chosen is the event switch-platform. -->
-    <script
-      defer
-      src="https://umami.oneo.me/script.js"
-      data-website-id="e8174058-eb31-40f8-bf9c-4ddc9ca5f4ac"
-      data-domains="nsgo.dev,nsgo-dev.github.io,nsgo.oneo.me"
-      data-auto-track="false"
-      data-tag="gallery-web"
-      onload="umami.track('load-gallery')"></script>
   </head>
   <body>
     <header class="toolbar">
@@ -774,7 +765,6 @@
           var url = new URL(location.href);
           url.searchParams.set('platform', platform);
           history.replaceState(history.state, '', url);
-          if (window.umami) window.umami.track('switch-platform', { platform: platform });
           load();
         }
 

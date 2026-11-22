@@ -470,10 +470,6 @@ const (
 	textSettingsGeneral
 	textSettingsAppInfo
 	textSettingsAppInfoDetail
-	textSettingsHelp
-	textSettingsStats
-	textSettingsStatsSend
-	textSettingsStatsDetail
 	textSettingsLanguageDetail
 	textAppGallery
 	textGroupApps
@@ -2784,10 +2780,6 @@ var keyOfText = [numTexts]string{
 	"settingsGeneral",
 	"settingsAppInfo",
 	"settingsAppInfoDetail",
-	"settingsHelp",
-	"settingsStats",
-	"settingsStatsSend",
-	"settingsStatsDetail",
 	"settingsLanguageDetail",
 	"appGallery",
 	"groupApps",
@@ -5096,10 +5088,6 @@ var textsEn = i18n.NewTexts(""+
 	"General"+
 	"App"+
 	"The version, build number and development status from nsgo.yaml."+
-	"Help"+
-	"Statistics"+
-	"Send usage statistics"+
-	"Send which demos are opened and for how long, with no personal data, to help improve NSGo."+
 	"The language the gallery and NSGo's components speak, and the direction they read in."+
 	"Gallery"+
 	"Apps"+
@@ -7405,10 +7393,6 @@ var textsEn = i18n.NewTexts(""+
 		7,
 		3,
 		64,
-		4,
-		10,
-		21,
-		90,
 		85,
 		7,
 		4,
@@ -9717,10 +9701,6 @@ var textsZhHans = i18n.NewTexts(""+
 	"通用"+
 	"应用"+
 	"nsgo.yaml 中的版本、构建号和开发状态。"+
-	"帮助"+
-	"统计"+
-	"发送使用统计"+
-	"发送打开了哪些示例及使用时长，不含个人信息，帮助改进 NSGo。"+
 	"示例库和 NSGo 组件使用的语言，以及阅读方向。"+
 	"示例库"+
 	"应用"+
@@ -12026,10 +12006,6 @@ var textsZhHans = i18n.NewTexts(""+
 		6,
 		6,
 		52,
-		6,
-		6,
-		18,
-		86,
 		63,
 		9,
 		6,
@@ -15188,34 +15164,6 @@ func (msgs Messages) SettingsAppInfoValue(version string, build string, developm
 		}
 	}
 }
-
-// SettingsHelp says "Help"
-// in the language the app shows under cx.
-func SettingsHelp(cx *core.Scope) string { return For(cx).SettingsHelp() }
-
-// SettingsHelp is the package's SettingsHelp in the language of msgs.
-func (msgs Messages) SettingsHelp() string { return msgs.text(textSettingsHelp) }
-
-// SettingsStats says "Statistics"
-// in the language the app shows under cx.
-func SettingsStats(cx *core.Scope) string { return For(cx).SettingsStats() }
-
-// SettingsStats is the package's SettingsStats in the language of msgs.
-func (msgs Messages) SettingsStats() string { return msgs.text(textSettingsStats) }
-
-// SettingsStatsSend says "Send usage statistics"
-// in the language the app shows under cx.
-func SettingsStatsSend(cx *core.Scope) string { return For(cx).SettingsStatsSend() }
-
-// SettingsStatsSend is the package's SettingsStatsSend in the language of msgs.
-func (msgs Messages) SettingsStatsSend() string { return msgs.text(textSettingsStatsSend) }
-
-// SettingsStatsDetail says "Send which demos are opened and for how long, with no personal data, to help improve NSGo."
-// in the language the app shows under cx.
-func SettingsStatsDetail(cx *core.Scope) string { return For(cx).SettingsStatsDetail() }
-
-// SettingsStatsDetail is the package's SettingsStatsDetail in the language of msgs.
-func (msgs Messages) SettingsStatsDetail() string { return msgs.text(textSettingsStatsDetail) }
 
 // SettingsLanguageDetail says "The language the gallery and NSGo's components speak, and the direction they read in."
 // in the language the app shows under cx.

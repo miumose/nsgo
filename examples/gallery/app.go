@@ -393,7 +393,6 @@ func Root(cx *core.Scope) core.Node {
 	rememberDemo(cx, g)
 	rememberLanguage(cx, g)
 	rememberAppearance(cx)
-	reportUsage(cx, g)
 	cx.Effect(func() { desktop.SetApplicationMenu(cx, g.menu(locales.For(cx))) })
 	// The application menu's Settings… takes the key where there is a
 	// menu bar.

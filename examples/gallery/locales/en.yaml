@@ -41,10 +41,6 @@ settingsGeneral: General
 settingsAppInfo: App
 settingsAppInfoDetail: The version, build number and development status from nsgo.yaml.
 settingsAppInfoValue: "version {version} · build {build} · development {development}"
-settingsHelp: Help
-settingsStats: Statistics
-settingsStatsSend: Send usage statistics
-settingsStatsDetail: Send which demos are opened and for how long, with no personal data, to help improve NSGo.
 settingsLanguageDetail: The language the gallery and NSGo's components speak, and the direction they read in.
 appGallery: Gallery
 groupApps: "Apps"

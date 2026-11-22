@@ -183,17 +183,12 @@ func TestPhoneLargeTitles(t *testing.T) {
 	}
 }
 
-// TestSimulatedPhone runs the gallery as a web build that runs as iOS (--nsgo-os=ios): the drawn tab bar and the app's own header, its back button included, stand in for the system's, which the web has not, and its usage is reported as the web's.
+// TestSimulatedPhone checks the gallery's own tab bar and header, including
+// its back button, when the web build simulates iOS (--nsgo-os=ios).
 func TestSimulatedPhone(t *testing.T) {
 	headless(t)
-	var sys core.OS
-	app := nsgotest.Start(t, func(cx *core.Scope) core.Node {
-		sys = statsOS(cx.Env())
-		return Root(cx)
-	}, nsgotest.Size(390, 844), nsgotest.Environment(core.Environment{OS: core.OSIOS, Idiom: core.IdiomPhone, Locale: "en-US", Simulated: true}))
-	if sys != core.OSWeb {
-		t.Fatalf("usage is reported from %q, want the web", sys)
-	}
+	app := nsgotest.Start(t, Root, nsgotest.Size(390, 844),
+		nsgotest.Environment(core.Environment{OS: core.OSIOS, Idiom: core.IdiomPhone, Locale: "en-US", Simulated: true}))
 	if v := app.FindMounted("id:tab-bar"); v.Component != "" {
 		t.Fatalf("the tab bar is the system's %q", v.Component)
 	}
